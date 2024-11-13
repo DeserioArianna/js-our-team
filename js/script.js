@@ -38,6 +38,12 @@ const teamMembers = [
 ];
 
 const teamCardRow = document.querySelector(".row");
+const addMembers = document.getElementById("add-member");
+const nameMember = document.getElementById("name");
+const roleMember = document.getElementById("role");
+const imgMember = document.getElementById("img");
+const emailMember = document.getElementById("email"); 
+// console.log(teamCardRow, addMembers, nameMember, roleMember, imgMember, emailMember);
 
 const createCard = ({ name, role, email, img }) => {
   return `
@@ -69,4 +75,26 @@ const renderTeam = () => {
   teamCardRow.innerHTML = items;
 };
 
+const buttonAddMember = (event) => {
+  event.preventDefault();
+  const name = nameMember.value.trim();
+  const role = roleMember.value.trim();
+  const email = emailMember.value.trim();
+  const img = imgMember.value.trim();
+
+  const newMember = {
+    name,
+    role,
+    email,
+    img
+  };
+
+  teamMembers.push(newMember);
+
+  renderTeam();
+
+};
+
 renderTeam();
+
+addMembers.addEventListener("submit", buttonAddMember)
