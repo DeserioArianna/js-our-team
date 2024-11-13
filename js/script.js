@@ -41,7 +41,7 @@ const teamCardRow = document.querySelector(".row");
 
 const createCard = ({ name, role, email, img }) => {
   return `
-  <div class="col-lg-4 mb-3">
+  <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
     <div class="card">
         <div class="row g-0">
             <div class="col-md-4">
